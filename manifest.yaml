@@ -1,0 +1,27 @@
+display_information:
+  name: Moderation Bot
+  description: Asks authors to delete template posts the channel owner didn't approve.
+features:
+  bot_user:
+    display_name: Moderation Bot
+    always_online: true
+oauth_config:
+  scopes:
+    bot:
+      - channels:history
+      - groups:history
+      - channels:read
+      - groups:read
+      - chat:write
+      - users:read
+    user:
+      - im:history
+      - im:read
+settings:
+  event_subscriptions:
+    bot_events:
+      - message.channels
+      - message.groups
+  socket_mode_enabled: true
+  org_deploy_enabled: false
+  token_rotation_enabled: false

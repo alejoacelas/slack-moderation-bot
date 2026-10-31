@@ -1,0 +1,15 @@
+# Copy to config.toml and fill in.
+
+# Your name as members know it; the bot's replies say "check with <owner_name>".
+owner_name = "Sam"
+
+# One block per channel. Find a channel's ID at the bottom of its "About" tab.
+# mode: "off" ignores the channel, "dry_run" logs decisions without posting,
+# "live" replies in the thread of each template message.
+[[channel]]
+id = "C0123456789"
+name = "my-channel"
+core_topic = "what this channel is for, in a few words"
+mode = "dry_run"
+# User IDs never checked (profile > ⋮ > Copy member ID). The owner is always exempt.
+exempt_users = []
