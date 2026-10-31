@@ -1,7 +1,9 @@
+import os
 import tomllib
 from pathlib import Path
 
-CONFIG = Path(__file__).resolve().parent.parent / "config.toml"
+ROOT = Path(__file__).resolve().parent.parent
+CONFIG = ROOT / os.environ.get("MODBOT_CONFIG", "config.toml")
 
 
 def load_config() -> dict:
