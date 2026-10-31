@@ -97,9 +97,12 @@ class Bot:
             found = violations(verdict) if verdict else []
             approval = None
             if found and self.owner:
-                dm = self.dm_with(event["user"])
-                if dm:
-                    approval = check_approval(self.claude, event, dm, self.owner_id, self.users)
+                try:
+                    dm = self.dm_with(event["user"])
+                    if dm:
+                        approval = check_approval(self.claude, event, dm, self.owner_id, self.users)
+                except Exception:
+                    log.exception("DM approval check failed for %s; moderating without it", event.get("ts"))
             approved = bool(approval and approval.approved)
             posted = False
             if found and not approved and channel["mode"] == "live":
