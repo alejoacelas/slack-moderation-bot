@@ -31,7 +31,7 @@ Slack app `A0CCFRH2CPL` ("Moderation Bot") on the AI Uplift for EA workspace
   `ssh agent-server 'cd ~/work/slack-moderation-bot && git pull && ~/.local/bin/uv sync --frozen && systemctl --user restart modbot'`.
   Logs: `ssh agent-server journalctl --user -u modbot -f`.
 - Run locally with
-  `~/best/stash/dotfiles/bin/op-agent run --env-file=deploy/alejo/mac.env.tpl -- uv run python -m modbot.bot`
+  `~/best/areas/dotfiles/bin/op-agent run --env-file=deploy/alejo/mac.env.tpl -- uv run python -m modbot.bot`
   (or `modbot.backfill CHANNEL_ID`). Stop the server bot first: Slack splits
   events between connections.
 
